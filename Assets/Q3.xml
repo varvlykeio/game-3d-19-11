@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Data xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Questions>
+    <Question>
+      <Info>ερωτηση1</Info>
+      <Answers>
+        <Answer>
+          <Info>επ1</Info>
+          <IsCorrect>true</IsCorrect>
+        </Answer>
+        <Answer>
+          <Info>επ2</Info>
+          <IsCorrect>false</IsCorrect>
+        </Answer>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Multi</Type>
+      <AddScore>21</AddScore>
+    </Question>
+    <Question>
+      <Info>ερωτηση2</Info>
+      <Answers>
+        <Answer>
+          <Info>Επιλογή 1</Info>
+          <IsCorrect>true</IsCorrect>
+        </Answer>
+        <Answer>
+          <Info>Επιλογή 2</Info>
+          <IsCorrect>true</IsCorrect>
+        </Answer>
+        <Answer>
+          <Info>Επιλογή 3</Info>
+          <IsCorrect>false</IsCorrect>
+        </Answer>
+        <Answer>
+          <Info>Επιλογή 4</Info>
+          <IsCorrect>true</IsCorrect>
+        </Answer>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>23</Timer>
+      <Type>Multi</Type>
+      <AddScore>22</AddScore>
+    </Question>
+    <Question>
+      <Info>ερωτηση3</Info>
+      <Answers>
+        <Answer>
+          <Info>Κωστας</Info>
+          <IsCorrect>false</IsCorrect>
+        </Answer>
+        <Answer>
+          <Info>Σακης</Info>
+          <IsCorrect>true</IsCorrect>
+        </Answer>
+        <Answer>
+          <Info>Αρης</Info>
+          <IsCorrect>false</IsCorrect>
+        </Answer>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>26</Timer>
+      <Type>Multi</Type>
+      <AddScore>30</AddScore>
+    </Question>
+  </Questions>
+</Data>
