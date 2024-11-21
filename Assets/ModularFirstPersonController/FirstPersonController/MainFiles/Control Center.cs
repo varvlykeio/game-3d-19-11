@@ -146,6 +146,7 @@ namespace MyVars{
            events.TotalScore = 0;
            events.currentlevel = 0;
            events.CursorLock = true;
+           events.QuizStart = false;
         }
 
        

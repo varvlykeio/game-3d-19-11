@@ -119,19 +119,19 @@ namespace Gamemanagera{
             if (events.QuizStart){
 
 
-                HMM.SetActive(true);
+                
                 events.StartupHighscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
 
                 timerDefaultColor =  Color.white;
                 LoadData();
-
+                   HMM.SetActive(true);
                 timerStateParaHash = Animator.StringToHash("TimerState");
 
                 var seed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
                 UnityEngine.Random.InitState(seed);
-
+                
                 Display();
-
+                 
                 events.QuizStart = false;
                 
             }
@@ -183,18 +183,21 @@ namespace Gamemanagera{
         /// </summary>
         void Display()
         {
+           
             EraseAnswers();
+            
             var question = GetRandomQuestion();
-
+            
             if (events.UpdateQuestionUI != null)
             {
                 events.UpdateQuestionUI(question);
             } else { Debug.LogWarning("Ups! Something went wrong while trying to display new Question UI Data. GameEvents.UpdateQuestionUI is null. Issue occured in GameManager.Display() method."); }
-
+             
             if (question.UseTimer)
             {
                 UpdateTimer(question.UseTimer);
             }
+           
         }
 
         public void CursorLockOnQuizEnd(){
@@ -336,7 +339,9 @@ namespace Gamemanagera{
         {
             //var path = Path.Combine(GameUtility.FileDir, GameUtility.FileName + events.level + ".xml");
             var path = Path.Combine(GameUtility.FileDir,"Q3.xml");
-            data = Data.Fetch(path);
+          
+            data = Data.Fetch(path); 
+         
         }
 
         /// <summary>
@@ -397,24 +402,38 @@ namespace Gamemanagera{
 
         Question GetRandomQuestion()
         {
+            
             var randomIndex = GetRandomQuestionIndex();
-            currentQuestion = randomIndex;
-
-            return data.Questions[currentQuestion];
-        }
+           
+            
+            currentQuestion = randomIndex; 
+            
+            #region PROBELM
+            return data.Questions[1];
+            #endregion PROBELM
+        }  
         int GetRandomQuestionIndex()
         {
             var random = 0;
+            
             if (FinishedQuestions.Count < data.Questions.Length)
             {
-                do
-                {
+               
+                do{  
+                    
                     random = UnityEngine.Random.Range(0, data.Questions.Length);
                 } while (FinishedQuestions.Contains(random) || random == currentQuestion);
-            }
+                
+            }Debug.Log(data.Questions.Length);
             return random;
         }
 
+        public void OnApplicationQuit(){
+         FinishedQuestions.Clear();
+         }
+
         #endregion
     }
+ 
+
 }
